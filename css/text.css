@@ -1,0 +1,30 @@
+h1 {
+    color: #fff;
+}
+
+a:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+a:active {
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+.row {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background: url
+}
+

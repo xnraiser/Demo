@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/text.css">
+</head>
+<body>
+    <!-- Navbar and Header -->
+    <div class="container-fluid">
+        <div class="row" style="background-color:#00C684">
+            <div class="col-1"></div>
+            <div class="col-1"><a href="index.html"><h3>首页</h3></a></div>
+            <div class="col-1"><a href="#"><h3>课程</h3></a></div>
+            <div class="col-1"><a href="#"><h3>教师</h3></a></div>
+            <div class="col-5"></div>
+            <div class="col-1" id="signup"><a href="#"><h3>注册</h3></a></div>
+            <div class="col-1" id="signin"><a href="#"><h3 style="color:#FFCC00">登录</h3></a></div>
+            <div class="col-1"></div>
+        </div>
+        <div class="row" style="background:url(res/1920x1080.jpg); height:500px">
+            <div class="col-1"></div>
+            <div class="col-11">
+                <h1 class="page-header">精 品 资 源 共 享 平 台</h1>
+            </div>
+        </div>
+    </div>
+  
+    <!-- Main Page -->
+    <div class="container">
+        <div class="row"><h3>推荐课程</h3></div>
+        <div class="row">
+
+        </div>
+    </div>
+
+    <!-- Sign In Page -->
+    <div class="modal fade" id="signinpage" style="display:none">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>登录</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="formGroupUsernameInput">用户名</label>
+                            <input type="text" class="form-control" id="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupPasswordInput">密码</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">注册</button>
+                    <button type="button" class="btn btn-success">登录</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sign Up Page -->
+    <div class="modal fade" id="signuppage" style="display:none">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5>注册</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="formGroupUsernameInput">用户名</label>
+                            <input type="text" class="form-control" id="signup-username">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupPasswordInput">密码</label>
+                            <input type="text" class="form-control" id="signup-password">
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">注册</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+        $("#signin").click(function(){
+            $("#signinpage").modal('show');
+        });
+        $("#signup").click(function(){
+            $("#signuppage").modal('show')
+        });
+    });
+</script>
+</body>
+</html>
