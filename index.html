@@ -8,43 +8,66 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/text.css">
+    <link rel="stylesheet" href="css/globle.css">
 </head>
 <body>
-    <!-- Navbar and Header -->
+    <!-- Navbar -->
     <div class="container-fluid">
-        <div class="row" style="background-color:#00C684">
-            <div class="col-1"></div>
-            <div class="col-1"><a href="index.html"><h3>首页</h3></a></div>
-            <div class="col-1"><a href="#"><h3>课程</h3></a></div>
-            <div class="col-1"><a href="#"><h3>教师</h3></a></div>
-            <div class="col-5"></div>
-            <div class="col-1" id="signup"><a href="#"><h3>注册</h3></a></div>
-            <div class="col-1" id="signin"><a href="#"><h3 style="color:#FFCC00">登录</h3></a></div>
-            <div class="col-1"></div>
+        <div class="row">
+           <div class="container">
+                <div class="row">
+                    <div class="col-7">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="index.html"><h3>首页</h3></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><h3>课程</h3></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#"><h3>#</h3></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-5">
+                        <ul class="nav justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="signup" href="#signUpPage"><h3>注册</h3></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" id="signin" href="#signInPage"><h3 style="color:#ffcc00">登录</h3></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row" style="background:url(res/1920x1080.jpg); height:500px">
-            <div class="col-1"></div>
-            <div class="col-11">
-                <h1 class="page-header">精 品 资 源 共 享 平 台</h1>
+        <div class="row">
+            <div class="cover">
+                <div class="cover-text">
+                    <h1 class="page-header" style="text-align:center">精 品 资 源 共 享 平 台</h1>
+                    <p>Simple pleasure 先鋪啤蛇</p>
+                </div>
             </div>
         </div>
     </div>
   
     <!-- Main Page -->
     <div class="container">
-        <div class="row"><h3>推荐课程</h3></div>
+        <h2>在这里,你甚至可以看视频</h2>
         <div class="row">
-
+            <div class="col-6"></div>
+            <div class="col-6"></div>
         </div>
     </div>
 
-    <!-- Sign In Page -->
+    <!-- Modal -->
+    <!-- Hidden Sign In Page -->
     <div class="modal fade" id="signinpage" style="display:none">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5>登录</h5>
+                    <h3>登录</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -59,21 +82,22 @@
                             <label for="formGroupPasswordInput">密码</label>
                             <input type="password" class="form-control" id="password">
                         </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">注册</button>
-                    <button type="button" class="btn btn-success">登录</button>
+                    <button type="button" class="btn btn-secondary btn-lg btn-block" id="gotosignup">注册</button>
+                    <button type="button" class="btn btn-success btn-lg btn-block" id="signinconfirm">登录</button>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Sign Up Page -->
+    <!-- Hidden Sign Up Page -->
     <div class="modal fade" id="signuppage" style="display:none">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5>注册</h5>
+                    <h3>注册</h3>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -82,15 +106,16 @@
                     <form>
                         <div class="form-group">
                             <label for="formGroupUsernameInput">用户名</label>
-                            <input type="text" class="form-control" id="signup-username">
+                            <input type="text" class="form-control" id="createusername">
                         </div>
                         <div class="form-group">
                             <label for="formGroupPasswordInput">密码</label>
-                            <input type="text" class="form-control" id="signup-password">
+                            <input type="text" class="form-control" id="createpassword">
                         </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-success">注册</button>
+                    <button type="button" class="btn btn-success btn-lg btn-block" id="signupconfirm">注册</button>
                 </div>
             </div>
         </div>
@@ -103,10 +128,16 @@
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 <script>
     $(document).ready(function(){
+        //display hidden signin modal
         $("#signin").click(function(){
             $("#signinpage").modal('show');
+            $("#signinpage #signinconfirm").click(function(){
+                $("#signin,#signup").html("<div class='col-2'><img src='res/1920x1080.jpg'></div>")
+            })
+            
         });
-        $("#signup").click(function(){
+        //display hidden signup modal
+        $("#signUp").click(function(){
             $("#signuppage").modal('show')
         });
     });
