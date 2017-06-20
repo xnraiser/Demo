@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    //display hidden modal
+    //Display hidden modal
     $("#signin").click(function(){
         $("#signinpage").modal('show');
     });
@@ -11,8 +11,13 @@ $(document).ready(function(){
         $("#signinpage").modal('hide');
         $("#signuppage").modal('show');
     });
-    //
-    $('#signinconfirm').click(function(){
+    $("#gotosignin").click(function(){
+        $("#signuppage").modal('hide');
+        $("#signinpage").modal('show');
+    });
+
+    //Not null verified
+    $('#signinconfirm,#signupconfirm').click(function(){
         if ($('#username').val()=='') {
             alert("用户名不能为空!");
             $('#username').focus();
@@ -36,4 +41,7 @@ $(document).ready(function(){
             return false;
         }
     });
+    
 });
+
+
