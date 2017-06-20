@@ -82,17 +82,17 @@
 
     <!-- Modal -->
     <!-- Hidden Sign In Page -->
-    <div class="modal fade" id="signinpage">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>登录</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
+    <form action="" method="">
+        <div class="modal fade" id="signinpage">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>登录</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">                    
                         <div class="form-group">
                             <label for="formGroupUsernameInput">用户名</label>
                             <input type="text" class="form-control" id="username">
@@ -101,28 +101,28 @@
                             <label for="formGroupPasswordInput">密码</label>
                             <input type="password" class="form-control" id="password">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block" id="gotosignup">注册</button>
-                    <button type="button" class="btn btn-success btn-lg btn-block" id="signinconfirm">登录</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-lg btn-block" id="gotosignup">注册</button>
+                        <button type="submit" class="btn btn-success btn-lg btn-block" id="signinconfirm">登录</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 
     <!-- Hidden Sign Up Page -->
-    <div class="modal fade" id="signuppage">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>注册</h3>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form>
+    <form action="" method="">
+        <div class="modal fade" id="signuppage">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3>注册</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
                         <div class="form-group">
                             <label for="formGroupUsernameInput">用户名</label>
                             <input type="text" class="form-control" id="createusername">
@@ -131,45 +131,23 @@
                             <label for="formGroupPasswordInput">密码</label>
                             <input type="text" class="form-control" id="createpassword">
                         </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success btn-lg btn-block" id="signupconfirm">注册</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success btn-lg btn-block" id="signupconfirm">注册</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
         integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="js/globle.js"></script>
 <script>
-    $(document).ready(function(){
-        //display hidden signin modal
-        $("#signin").click(function(){
-            $("#signinpage").modal(function(){
-                $("#signinconfirm").click(function(){
-                    if("#username"==null){
-                        alert("请输入用户名!");
-                    };
-                });
-                
-                
-
-            });
-            
-            
-        });
-        
-        //display hidden signup modal
-        $("#signup,#gotosignup").click(function(){
-            $("#signuppage").modal(function(){
-
-            })
-        });
-    });
+    
 </script>
 </body>
 </html>
