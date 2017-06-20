@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Title</title>
+    <title>精品资源共享平台-Simple Pleasure</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
           integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="css/globle.css">
@@ -22,7 +22,7 @@
                                 <a class="nav-link active" href="index.html"><h3>首页</h3></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" href="#"><h3>课程</h3></a>
+                                <a class="nav-link active" href="html/allCourse.html"><h3>课程</h3></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active" href="#"><h3>#</h3></a>
@@ -35,7 +35,7 @@
                                 <a class="nav-link active" id="signup" href="#signUpPage"><h3>注册</h3></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link active" id="signin" href="#signInPage"><h3 style="color:#ffcc00">登录</h3></a>
+                                <a class="nav-link active" id="signin" href="#signInPage"><h3>登录</h3></a>
                             </li>
                         </ul>
                     </div>
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="cover">
                 <div class="cover-text">
-                    <h1 class="page-header" style="text-align:center">精 品 资 源 共 享 平 台</h1>
+                    <h1 class="page-header">精 品 资 源 共 享 平 台</h1>
                     <p>Simple pleasure 先鋪啤蛇</p>
                 </div>
             </div>
@@ -56,14 +56,33 @@
     <div class="container">
         <h2>在这里,你甚至可以看视频</h2>
         <div class="row">
+            <div class="col-3">
+                <a href="#"><img src="res/HTMl5_logo.svg" class="img-fluid"><h2>HTML5</h2></a>
+            </div>
+            <div class="col-3">
+                <a href="#"><img src="res/CSS3_logo.svg" class="img-fluid"><h2>CSS3</h2></a>
+            </div>
+            <div class="col-3">
+                <a href="#"><img src="res/JavaScript_logo.svg" class="img-fluid"><h2>JavaScript</h2></a>
+            </div>
+            <div class="col-3">
+                <a href="#"><img src="res/Bootstrap_logo.svg" class="img-fluid"><h2>Bootstrap</h2></a>
+            </div>
+        </div>
+            </div>
             <div class="col-6"></div>
-            <div class="col-6"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <h2 class="small">Build by xnraiser</h2>
         </div>
     </div>
 
     <!-- Modal -->
     <!-- Hidden Sign In Page -->
-    <div class="modal fade" id="signinpage" style="display:none">
+    <div class="modal fade" id="signinpage">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -93,7 +112,7 @@
     </div>
 
     <!-- Hidden Sign Up Page -->
-    <div class="modal fade" id="signuppage" style="display:none">
+    <div class="modal fade" id="signuppage">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -130,15 +149,25 @@
     $(document).ready(function(){
         //display hidden signin modal
         $("#signin").click(function(){
-            $("#signinpage").modal('show');
-            $("#signinpage #signinconfirm").click(function(){
-                $("#signin,#signup").html("<div class='col-2'><img src='res/1920x1080.jpg'></div>")
-            })
+            $("#signinpage").modal(function(){
+                $("#signinconfirm").click(function(){
+                    if("#username"==null){
+                        alert("请输入用户名!");
+                    };
+                });
+                
+                
+
+            });
+            
             
         });
+        
         //display hidden signup modal
-        $("#signUp").click(function(){
-            $("#signuppage").modal('show')
+        $("#signup,#gotosignup").click(function(){
+            $("#signuppage").modal(function(){
+
+            })
         });
     });
 </script>
